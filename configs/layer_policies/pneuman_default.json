@@ -1,0 +1,23 @@
+{
+  "policy_version": "layer-policy/1.0",
+  "tenant": "pneuman-default",
+  "layers_out": {
+    "50": { "name": "BUITENMUREN", "color": 7, "linetype": "CONTINUOUS" },
+    "35": { "name": "BINNENMUREN", "color": 7, "linetype": "CONTINUOUS" },
+    "25": { "name": "TRAP_LIFT", "color": 7, "linetype": "CONTINUOUS" },
+    "ZONES": { "name": "BRANDZONES", "color": 1, "linetype": "CONTINUOUS" },
+    "0": { "name": "0", "color": 7, "linetype": "CONTINUOUS" }
+  },
+
+  "map": [
+    { "match": { "semantic_type": "outer_wall_centerline" }, "apply": { "layer_out": "50", "lineweight_mm": 0.25 } },
+    { "match": { "semantic_type": "inner_wall_centerline" }, "apply": { "layer_out": "35", "lineweight_mm": 0.20 } },
+    { "match": { "semantic_type": "stair_step" }, "apply": { "layer_out": "25" } },
+    { "match": { "semantic_type": "lift_cross" }, "apply": { "layer_out": "25" } },
+    { "match": { "semantic_type": "fire_zone_polygon" }, "apply": { "layer_out": "ZONES" } }
+  ],
+
+  "fallback": {
+    "unclassified_layer_out": "0"
+  }
+}

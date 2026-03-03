@@ -1,0 +1,24 @@
+ruleset: pneuman-house/2026.03-v1
+units: mm
+
+transform:
+  scale_factor: 0.015
+
+normalize:
+  # "alles op snap 1"
+  grid_snap_mm: 1.0
+
+  # endpoints binnen tolerantie samenvoegen
+  endpoint_merge_tol_mm: 1.0
+
+  # cleanup
+  min_segment_length_mm: 2.0
+  merge_collinear: false
+
+stairs:
+  min_tread_spacing_mm: 1.0
+
+floors:
+  # in MVP alleen check/rapport; later alignment transform
+  check_same_footprint: true
+  footprint_tolerance_mm: 5.0

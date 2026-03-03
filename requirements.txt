@@ -1,0 +1,5 @@
+ezdxf>=1.2.0
+shapely>=2.0.0
+numpy>=1.26.0
+pyyaml>=6.0.1
+pydantic>=2.7.0
